@@ -1,0 +1,6 @@
+@Captcha_Net_Core_HostAddress = http://localhost:5157
+
+GET {{Captcha_Net_Core_HostAddress}}/captcha/
+Accept: application/json
+
+###
