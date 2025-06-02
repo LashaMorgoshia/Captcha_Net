@@ -1,9 +1,0 @@
-﻿<PropertyGroup>
-	<PackageId>CaptchaLib</PackageId>
-	<Version>1.0.0</Version>
-	<Authors>Lasha Morgoshia</Authors>
-	<Description>This package provides Captcha functionality for .NET Framework.</Description>
-	<PackageLicenseExpression>MIT</PackageLicenseExpression>
-	<RepositoryUrl>https://github.com/your/repo</RepositoryUrl>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
-</PropertyGroup>

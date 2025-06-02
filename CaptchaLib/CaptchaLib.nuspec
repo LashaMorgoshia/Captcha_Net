@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<package>
+	<metadata>
+		<id>CaptchaLib_Net</id>
+		<version>2.0.1</version>
+		<authors>Lasha Morgoshia</authors>
+		<description>This package provides Captcha functionality for .NET Framework.</description>
+		<license type="expression">MIT</license>
+		<repository url="https://github.com/LashaMorgoshia/Captcha_Net" />
+		<readme>README.md</readme>
+	</metadata>
+	<files>
+		<file src="README.md" target="README.md" />
+	</files>
+</package>
