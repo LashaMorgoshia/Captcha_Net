@@ -8,7 +8,7 @@ public class Captcha
     private static readonly Random _rand = new Random();
 
 
-    public (string code, byte[] image) Generate()
+    public (string code, byte[] image) Generate(bool hard = false)
     {
         string code = GenerateRandomCode(6);
 
@@ -69,7 +69,12 @@ public class Captcha
 
                 using (Font font = new Font(fontName, fontSize, FontStyle.Bold))
                 {
-                    float angle = _rand.Next(-60, 60);
+                    float angle = default(float);
+                    
+                    if (hard)
+                    angle = _rand.Next(-60, 60);
+                    else
+                        angle = _rand.Next(-30, 30);
 
                     SizeF charSize = g.MeasureString(c, font);
                     int bmpSize = (int)Math.Ceiling(Math.Sqrt(charSize.Width * charSize.Width + charSize.Height * charSize.Height)) + 4;
@@ -80,12 +85,22 @@ public class Captcha
                         charG.Clear(Color.Transparent);
                         charG.SmoothingMode = SmoothingMode.AntiAlias;
 
-                        Color lightColor = Color.FromArgb(
+                        Color lightColor = default(Color);
+                        if (hard)
+                        lightColor = Color.FromArgb(
 _rand.Next(1, 90),            // very low alpha for faintness
 _rand.Next(200, 255),        // R pastel range
 _rand.Next(200, 255),        // G pastel range
 _rand.Next(200, 255)         // B pastel range
 );
+
+                        else
+                            lightColor = Color.FromArgb(
+    _rand.Next(60, 90),            // very low alpha for faintness
+    _rand.Next(100, 255),        // R pastel range
+    _rand.Next(100, 255),        // G pastel range
+    _rand.Next(100, 255)         // B pastel range
+    );
 
                         using (Brush brush = new SolidBrush(lightColor))
                         {
