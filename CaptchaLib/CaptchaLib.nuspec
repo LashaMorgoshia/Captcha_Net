@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0"?>
 <package>
 	<metadata>
-		<id>CaptchaLib_Net</id>
-		<version>2.0.1</version>
+		<id>CaptchaLib.Net</id>
+		<version>2.0.2</version>
 		<authors>Lasha Morgoshia</authors>
 		<description>This package provides Captcha functionality for .NET Framework.</description>
 		<license type="expression">MIT</license>

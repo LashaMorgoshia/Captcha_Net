@@ -1,14 +1,21 @@
-﻿using System;
+﻿/*nuget pack CaptchaLib.csproj -Properties Configuration=Release*/
+using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+
+public class CaptchaObject
+{
+    public string Code { get; set; }
+    public byte[] Content { get; set; }
+}
 
 public class Captcha
 {
     private static readonly Random _rand = new Random();
 
 
-    public (string code, byte[] image) Generate(bool hard = false)
+    public CaptchaObject Generate(bool hard = false)
     {
         string code = GenerateRandomCode(6);
 
@@ -153,7 +160,7 @@ _rand.Next(200, 255)         // B pastel range
             {
                 distorted.Save(ms, ImageFormat.Png);
                 distorted.Dispose();
-                return (code, ms.ToArray());
+                return new CaptchaObject() { Code = code, Content = ms.ToArray() };
             }
         }
     }

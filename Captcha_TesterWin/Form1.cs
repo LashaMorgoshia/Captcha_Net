@@ -14,8 +14,8 @@ namespace Captcha_TesterWin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            (var code, byte[] image) = new Captcha().Generate();
-            pictureBox1.Image = Image.FromStream(new MemoryStream(image));
+            var result = new Captcha().Generate();
+            pictureBox1.Image = Image.FromStream(new MemoryStream(result.Content));
         }
     }
 }
